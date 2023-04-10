@@ -18,10 +18,10 @@ const pickUserHand = (hand) => {
     contest.style.display = "flex";
 
     //pegar o que o usuario escolheu
-    document.getElementById("userPickImage").scr = handOptions[hand];
+    document.getElementById("userPickImage").src = handOptions[hand];
 
-    // let cpHand = pickComputerHand();
-    // referee(hand, cpHand);
+    let cpHand = pickComputerHand();
+    referee(hand, cpHand);
 }
 
 const pickComputerHand = () => {
@@ -31,7 +31,7 @@ const pickComputerHand = () => {
     console.log("CPHand", cpHand)
     
     //pegar o que o computador escolheu
-    document.getElementById("computerPickImage").scr = handOptions[cpHand];
+    document.getElementById("computerPickImage").src = handOptions[cpHand];
 
     return cpHand;
 }
@@ -76,5 +76,5 @@ const setDecision = (decision) => {
 }
 
 const setScore = (score) => {
-    document.querySelector(".score h1").innerText - score;
+    document.querySelector(".score h1").innerText = score;
 }
