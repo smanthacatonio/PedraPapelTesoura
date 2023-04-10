@@ -9,7 +9,6 @@ const handOptions = {
   let SCORE = 0;
 
 const pickUserHand = (hand) => {
-    console.log(hand);
     //esconder a página atual
     let hands = document.querySelector(".hands");
     hands.style.display = "none";
@@ -77,5 +76,15 @@ const setDecision = (decision) => {
 }
 
 const setScore = (score) => {
+    SCORE = score
     document.querySelector(".score h1").innerText = score;
+}
+
+const restartGame = () => {
+    //esconder a página atual
+    let hands = document.querySelector(".hands");
+    hands.style.display = "flex";
+    //mostrar a próxima página com a mão que eu escolhi
+    let contest = document.querySelector(".contest");
+    contest.style.display = "none";
 }
