@@ -36,40 +36,41 @@ const pickComputerHand = () => {
     return cpHand;
 }
 
-const referee = (userHand, chHand) => {
-    if(userHand == "paper" && cpHand == "scissors") {
-        setDecision("YOU LOSE!")
-        setDecision(SCORE - 1)
-    } else if (userHand == "paper" && cpHand == "rock") {
-        setDecision("YOU WIN!")
-        setDecision(SCORE + 1)
-    } else if (userHand == "paper" && cpHand == "paper") {
-        setDecision("IT'S A TIE!")
-        setDecision(SCORE + 1)
+const referee = (userHand, cpHand) => {
+    if (userHand == "paper" && cpHand == "scissors") {
+      setDecision("YOU LOSE!");
+      setScore(SCORE - 1);
     }
-
-    if(userHand == "rock" && cpHand == "paper") {
-        setDecision("YOU LOSE!")
-        setDecision(SCORE - 1)
-    } else if (userHand == "rock" && cpHand == "scissor") {
-        setDecision("YOU WIN!")
-        setDecision(SCORE + 1)
-    } else if (userHand == "rock" && cpHand == "rock") {
-        setDecision("IT'S A TIE!")
-        setDecision(SCORE + 1)
+    if (userHand == "paper" && cpHand == "rock") {
+      setDecision("YOU WIN!");
+      setScore(SCORE + 1);
     }
-
-    if(userHand == "scissors" && cpHand == "rock") {
-        setDecision("YOU LOSE!")
-        setDecision(SCORE - 1)
-    } else if (userHand == "scissors" && cpHand == "paper") {
-        setDecision("YOU WIN!")
-        setDecision(SCORE + 1)
-    } else if (userHand == "scissors" && cpHand == "scissors") {
-        setDecision("IT'S A TIE!")
-        setDecision(SCORE + 1)
+    if (userHand == "paper" && cpHand == "paper") {
+      setDecision("It's a tie!");
     }
-}
+    if (userHand == "rock" && cpHand == "scissors") {
+      setDecision("YOU WIN!");
+      setScore(SCORE + 1);
+    }
+    if (userHand == "rock" && cpHand == "paper") {
+      setDecision("YOU LOSE!");
+      setScore(SCORE - 1);
+    }
+    if (userHand == "rock" && cpHand == "rock") {
+      setDecision("It's a tie!");
+    }
+    if (userHand == "scissors" && cpHand == "scissors") {
+      setDecision("It's a tie!");
+    }
+    if (userHand == "scissors" && cpHand == "rock") {
+      setDecision("YOU LOSE!");
+      setScore(SCORE - 1);
+    }
+    if (userHand == "scissors" && cpHand == "paper") {
+      setDecision("YOU WIN!");
+      setScore(SCORE + 1);
+    }
+  };
 
 const setDecision = (decision) => {
     document.querySelector(".decision h1").innerText = decision;
